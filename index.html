@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong Game JavaScript</title>
+    <style>
+        body{
+            background-color: dimgray;
+        }
+        #pong{
+            border: 2px solid #FFF;
+            position: absolute;
+            margin :auto;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="Start button">
+        <button onclick="functionToExec()">Start Game</button> 
+    </div>
+    <!--<script src="pong.js">
+        function functionToExec() {}
+    </script>-->
+    <div id="Quit">
+        <button onclick="location.reload();;"> Quit </button>
+    </div>
+
+    <script>document.getElementById("Quit").innerHTML="";</script>
+
+    <canvas id="pong" width="600" height="400"></canvas>
+    <script type="text/javascript">
+        function functionToExec() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "pong.js"; 
+            document.getElementsByTagName("head")[0].appendChild(script);
+            document.getElementById("Start button").innerHTML="";
+            document.getElementById("Quit").innerHTML= '<button onclick="location.reload();;"> Quit </button>';
+        }
+    </script>
+</body>
+</html>
