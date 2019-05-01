@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Snake Game</title>
+        <style>
+            canvas{
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+
+    <div id="Start button">
+        <button onclick="functionToExec()">Start Game</button> 
+    </div>
+    <div id="Quit">
+        <button onclick="location.reload();;"> Quit </button>
+    </div>
+
+    <script>document.getElementById("Quit").innerHTML="";</script>
+
+    <canvas id="snake" width="608" height="608"></canvas>
+    <script type="text/javascript">
+        function functionToExec() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "snake.js"; 
+            document.getElementsByTagName("head")[0].appendChild(script);
+            document.getElementById("Start button").innerHTML="";
+            document.getElementById("Quit").innerHTML= '<button onclick="location.reload();;"> Quit </button>';
+        }
+    </script>
+</html>
