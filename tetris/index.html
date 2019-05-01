@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Tetris Game JS</title>
+    <style>
+        #score{
+            display: inline-block;
+        }
+        div{
+            font-size: 25px;
+            font-weight: bold;
+            font-family: monospace;
+            text-align: center;
+        }
+        canvas{
+            display: block;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="tetris" width="200" height="400"></canvas>
+
+    <div id="Start button">
+        <button onclick="functionToExec1();functionToExec2()">Start Game</button> 
+    </div>
+    <div id="Quit">
+        Score : <div id="score">0</div>
+        <button onclick="location.reload();"> Quit </button>
+    </div>
+
+    <script>document.getElementById("Quit").innerHTML="";</script>
+    <script type="text/javascript">
+        function functionToExec1() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "tetrominoes.js"; 
+            document.getElementsByTagName("head")[0].appendChild(script);
+            document.getElementById("Start button").innerHTML="";
+            document.getElementById("Quit").innerHTML= '<button onclick="location.reload();"> Quit </button>';
+        }
+        function functionToExec2() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "tetris.js"; 
+            document.getElementsByTagName("head")[0].appendChild(script);
+            document.getElementById("Start button").innerHTML="";
+            document.getElementById("Quit").innerHTML= ' Score : <div id="score">0</div>\n<button onclick="location.reload();"> Quit </button>';
+        }
+    </script>
+</body>
+</html>
